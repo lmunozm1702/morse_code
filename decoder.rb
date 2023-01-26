@@ -57,7 +57,7 @@ def decode(message)
     decoded_message = ''
     words.each do |word|
         decoded_word = decode_word(word)
-        decoded_message += "#{decoded_word} "
+        decoded_message = "#{decoded_message}#{decoded_word} "
   end
   decoded_message.strip
 end
