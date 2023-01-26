@@ -53,6 +53,15 @@ end
 def decode(message)
     #split by 3 spaces 
     #call decode_word with each word    
+    words = message.split('  ')
+    decoded_message = ''
+    words.each do |word|
+        decoded_word = decode_word(word)
+        decoded_message += "#{decoded_word} "
+  end
+  decoded_message.strip
 end
 
 print decode_word("-- -.--")
+puts decode('-- -.--   -. .- -- .')
+puts decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
