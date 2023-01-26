@@ -37,12 +37,12 @@ def decode_char(message)
     '---..' => '8',
     '----.' => '9'
   }
-  return decode_hash[message]
+  decode_hash[message]
 end
-    
+
 def decode_word(message)
-  result = ""
-  word = message.split(' ')
+  result = ''
+  word = message.split()
   word.each do |char|
     result = "#{result}#{decode_char(char)}"
   end
@@ -50,8 +50,8 @@ def decode_word(message)
 end
 
 def decode(message)
-  #split by 3 spaces 
-  #call decode_word with each word    
+  # split by 3 spaces
+  # call decode_word with each word
   words = message.split('  ')
   decoded_message = ''
   words.each do |word|
@@ -61,6 +61,6 @@ def decode(message)
   decoded_message.strip
 end
 
-print decode_word("-- -.--")
-puts decode("-- -.--   -. .- -- .")
-puts decode(".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...")
+print decode_word('-- -.--')
+puts decode('-- -.--   -. .- -- .')
+puts decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
